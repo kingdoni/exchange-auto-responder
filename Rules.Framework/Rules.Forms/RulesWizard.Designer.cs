@@ -28,7 +28,7 @@ namespace Rules.Framework.Rules.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("from people or distribution list");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("from people or distribution list");
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -144,9 +144,9 @@ namespace Rules.Framework.Rules.Forms
             this.columnHeader1});
             this.listConditions.FullRowSelect = true;
             this.listConditions.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
             this.listConditions.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listConditions.Location = new System.Drawing.Point(7, 37);
             this.listConditions.Name = "listConditions";
             this.listConditions.Size = new System.Drawing.Size(400, 172);
@@ -223,6 +223,7 @@ namespace Rules.Framework.Rules.Forms
             this.checkApplyRuleNow.TabIndex = 13;
             this.checkApplyRuleNow.Text = "R&un this rule now";
             this.checkApplyRuleNow.UseVisualStyleBackColor = true;
+            this.checkApplyRuleNow.Visible = false;
             // 
             // label4
             // 
@@ -277,6 +278,7 @@ namespace Rules.Framework.Rules.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RulesWizard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Rules Wizard";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmRulesWizard_Paint);

@@ -118,6 +118,75 @@ namespace Rules.Framework.Rules.Forms
             
             control.ResumeLayout();
         }
+        public void DisplayWithoutLink(Rule rule)
+        {
+            this.rule = rule;
+            int startY = 4;
+            int startX = 4;
+            int index = 0;
+            string prefix = "";
+
+            control.SuspendLayout();
+            control.Controls.Clear();
+
+            Label lbl = new Label();
+            lbl.Text = rule.TriggerText;
+            lbl.AutoSize = true;
+            control.Controls.Add(lbl);
+            lbl.SetBounds(2, startX, lbl.Width, lbl.Height);
+            startY += lbl.Height + 4;
+
+            // show conditions
+            foreach (RuleCondition rc in rule.Conditions)
+            {
+                LinkLabel ll = new LinkLabel {AutoSize = true};
+                SetLinkLabel(ll, prefix, rc);
+                //ll.Click += new EventHandler(ll_Click);
+                ll.SetBounds(startX, startY, ll.Width, ll.Height);
+                ll.Tag = new RulePartTag(rc, 0, index);
+                control.Controls.Add(ll);
+                startY += ll.Height;
+                startX = 12;
+                prefix = textAnd + " ";
+                index++;
+            }
+
+            // show actions
+            startX = 4;
+            prefix = "";
+            index = 0;
+            foreach (RuleAction ra in rule.Actions)
+            {
+                LinkLabel ll = new LinkLabel {AutoSize = true};
+                SetLinkLabel(ll, prefix, ra);
+                //ll.Click += new EventHandler(ll_Click);
+                ll.SetBounds(startX, startY, ll.Width, ll.Height);
+                ll.Tag = new RulePartTag(ra, 1, index);
+                control.Controls.Add(ll);
+                startY += ll.Height;
+                startX = 12;
+                prefix = textAnd + " ";
+            }
+
+            //show exceptions
+            startX = 4;
+            prefix = "";
+            index = 0;
+            foreach (RuleCondition rc in rule.Exceptions)
+            {
+                LinkLabel ll = new LinkLabel {AutoSize = true};
+                SetLinkLabel(ll, prefix, rc);
+                //ll.Click += new EventHandler(ll_Click);
+                ll.SetBounds(startX, startY, ll.Width, ll.Height);
+                ll.Tag = new RulePartTag(rc, 2, index);
+                control.Controls.Add(ll);
+                startY += ll.Height;
+                startX = 12;
+                prefix = textOr + " ";
+            }
+
+            control.ResumeLayout();
+        }
 
         private void ll_Click(object sender, EventArgs e)
         {

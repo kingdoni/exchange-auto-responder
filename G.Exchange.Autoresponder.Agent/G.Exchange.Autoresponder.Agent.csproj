@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Exchange.Data.Common">
+      <HintPath>..\Library\Microsoft.Exchange.Data.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Exchange.Data.Transport">
       <HintPath>..\Library\Microsoft.Exchange.Data.Transport.dll</HintPath>
     </Reference>
@@ -44,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\GEAA Config\Ressources\geea.Designer.cs">
+      <Link>Ressources\geea.Designer.cs</Link>
+    </Compile>
     <Compile Include="Actions\AutoReplyAction.cs" />
     <Compile Include="Conditions\AttachmentCondition.cs" />
     <Compile Include="Conditions\BodyCondition.cs" />
@@ -56,12 +62,21 @@
     <Compile Include="GeeaAgent.cs" />
     <Compile Include="GEEAAgentFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rules.Framework\Rules.Framework.csproj">
       <Project>{37637dc3-27fe-4736-a733-1c01621cbefe}</Project>
       <Name>Rules.Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\GEAA Config\Ressources\geea.en-EN.resx">
+      <Link>Ressources\geea.en-EN.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\GEAA Config\Ressources\geea.resx">
+      <Link>Ressources\geea.resx</Link>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

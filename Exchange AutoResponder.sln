@@ -11,8 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEAA Config", "GEAA Config\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{E10A1129-C67D-4C9B-B1A7-200C6E4F7409}"
 	ProjectSection(SolutionItems) = preProject
+		Library\Microsoft.Exchange.Data.Common.dll = Library\Microsoft.Exchange.Data.Common.dll
 		Library\Microsoft.Exchange.Data.Transport.dll = Library\Microsoft.Exchange.Data.Transport.dll
 		Library\Microsoft.Exchange.Transport.dll = Library\Microsoft.Exchange.Transport.dll
+		Library\Microsoft.mshtml.dll = Library\Microsoft.mshtml.dll
+		Library\MSDN.HtmlEditorControl.dll = Library\MSDN.HtmlEditorControl.dll
+		Library\System.Windows.Forms.Ribbon35.dll = Library\System.Windows.Forms.Ribbon35.dll
 	EndProjectSection
 EndProject
 Global
